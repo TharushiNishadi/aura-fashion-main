@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        /* Basic styles for the chat interface */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        #chatbox {
+            flex: 1; /* Allow chatbox to grow and fill available space */
+            width: 100%;
+            max-width: 350px;
+            height: 100%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow-y: scroll;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px; /* Add space below the chatbox */
+        }
+        #userInput {
+            width: calc(100% - 85px); /* Adjust width based on button size */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px; /* This can be removed if not needed */
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            height: 40px; /* Ensure button height is consistent */
+        }
+        button:hover {
+            background-color: #FF5A4D;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 15px;
+            max-width: 80%;
+            position: relative;
+            word-wrap: break-word; /* Prevent overflow */
+        }
+        .bot {
+            background-color: #d0e1f9; /* Light blue for bot messages */
+            align-self: flex-start; /* Align bot messages to the left */
+        }
+        .user {
+            background-color: #c4f7c5; /* Light green for user messages */
+            align-self: flex-end; /* Align user messages to the right */
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbox"></div>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <input type="text" id="userInput" placeholder="Type your response..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        // Display initial greeting when the page loads
+        window.onload = function() {
+            document.getElementById('chatbox').innerHTML += "<div class='message bot'>Bot: Hello! Welcome to Aurora Fashion. How can I assist you today? 😊 Are you a new customer? <br><br> 1) Yes <br> 2) No <br><br></div>";
+        };
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const userMessage = userInput.value.trim();
+            if (userMessage) {
+                document.getElementById('chatbox').innerHTML += `<div class='message user'>User: ${userMessage}</div>`;
+                userInput.value = '';
+                
+                fetch('../actions/chatbot.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: userMessage }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('chatbox').innerHTML += `<div class='message bot'>Bot: ${data.reply}</div>`;
+                    // Scroll to the bottom of the chatbox
+                    const chatbox = document.getElementById('chatbox');
+                    chatbox.scrollTop = chatbox.scrollHeight;
+                });
+            }
+        }
+
+        // Event listener for "Enter" key to send message
+        document.getElementById('userInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+</body>
+</html>

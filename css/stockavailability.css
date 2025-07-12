@@ -1,0 +1,284 @@
+/* General styles */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: #ff0000; /* Primary theme color */
+    --text-color: #282C37; /* General text color */
+    --bg-color: #ffffff; /* General background color */
+    --tmp-color: rgb(26, 1, 250); /* Additional color */
+    --tmp2-color: rgb(250, 221, 221); /* Additional color */
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* New body background color */
+}
+
+/* Header styles */
+.main-header {
+    background-color: #373D4B; /* Updated to match header background color from the first file */
+    color: var(--bg-color);
+    padding: 20px;
+    text-align: center;
+    font-size: 24px; /* Updated font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.main-header h1 {
+    font-weight: 700;
+    white-space: nowrap;
+    display: inline-block;
+    animation: scroll 15s linear infinite;
+    color: #fff;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    height: 100vh;
+}
+
+.side-panel {
+    background-color: var(--text-color); /* Apply text color for side panel background */
+    color: var(--bg-color); /* Side panel text color */
+    width: 250px; /* Updated width */
+    height: 100vh; /* Fixed height for side-panel */
+    padding-top: 20px;
+    position: fixed; /* Fixed position for the sidebar */
+    top: 0;
+    left: 0;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.side-panel ul {
+    list-style: none;
+}
+
+.side-panel ul li {
+    margin: 15px 0;
+}
+
+.side-panel ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* Updated font size */
+    padding: 10px 20px;
+    display: block;
+    background-color: #373D4B; /* Sidebar link background */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.side-panel ul li a:hover {
+    background-color: #505A6B; /* Sidebar link hover background */
+}
+
+/* Content area styles */
+.content-area {
+    margin-left: 270px; /* Updated to account for sidebar width */
+    flex: 1;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+}
+
+h3, h2 {
+    color: var(--main-color);
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 5px;
+}
+
+/* Table for stock availability */
+.availability-table,
+.inquiries-table {
+    width: 80%; /* Centered and adjusted */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.availability-table th,
+.availability-table td,
+.inquiries-table th,
+.inquiries-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.availability-table th,
+.inquiries-table th {
+    background-color: #373D4B; /* Header background color */
+    color: white; /* Header text color */
+    font-weight: bold;
+    text-align: center;
+}
+
+.availability-table tr:nth-child(even),
+.inquiries-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row color */
+}
+
+.availability-table tr:hover,
+.inquiries-table tr:hover {
+    background-color: #f1f1f1; /* Row hover color */
+}
+
+/* Responsive Design for tables */
+@media (max-width: 768px) {
+    .availability-table,
+    .inquiries-table {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .availability-table th, 
+    .availability-table td,
+    .inquiries-table th,
+    .inquiries-table td {
+        padding: 10px;
+        font-size: 14px; /* Adjusted font size */
+    }
+
+    .main-header h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .availability-table th, 
+    .availability-table td,
+    .inquiries-table th,
+    .inquiries-table td {
+        font-size: 12px; /* Smaller font for mobile */
+        padding: 8px;
+    }
+}
+
+/* Item Search Form */
+.item-search-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-search-form .form-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.item-search-form label {
+    font-size: 1rem;
+    width: 150px;
+    text-align: left;
+}
+
+.item-search-form input {
+    flex-grow: 1;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.item-search-form button {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #D32F2F; /* Matching button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+.item-search-form button:hover {
+    background-color: #B71C1C; /* Darker red on hover */
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #D32F2F; /* Matching red color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #B71C1C; /* Darker red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .side-panel {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .content-area {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .availability-table,
+    .inquiries-table {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .availability-table th, 
+    .availability-table td,
+    .inquiries-table th,
+    .inquiries-table td {
+        padding: 10px;
+        font-size: 14px; /* Adjusted font size */
+    }
+
+    .main-header h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .availability-table th, 
+    .availability-table td,
+    .inquiries-table th,
+    .inquiries-table td {
+        font-size: 12px; /* Smaller font for mobile */
+        padding: 8px;
+    }
+}

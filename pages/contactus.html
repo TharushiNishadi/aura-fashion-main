@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Fashion | Home</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./img/favicon_io/favicon.png">
+    <!-- Favicon -->
+
+    <link rel="stylesheet" href="contactus.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Mouse scroll -->
+
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <script>
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        const cursorDotLine = document.querySelector("[data-cursor-outLine");
+
+        window.addEventListener("mousemove", function(e) {
+
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            //  cursorDotLine.style.left = `${posX}px`;
+            //  cursorDotLine.style.top = `${posY}px`;
+
+            cursorDotLine.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, {
+                duration: 500,
+                fill: "forwards"
+            });
+
+        });
+    </script>
+
+
+    <!-- Top Header Start -->
+    <div class="top-header">
+        <div class="header-left">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Track Order</a>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header-right">
+            <ul>
+                <li>
+                    <i class='bx bxs-user'></i>
+                    <a href="/login.html">Register Here</a>
+                    <div class="search-box">
+                        <i class="bx bx-search-alt-2"></i></span>
+                        <input type="text" class="search-input" placeholder="Search for a Product">
+                    </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Top Header End -->
+
+
+    <!-- Main Header Start -->
+    <header class="main-header">
+        <a href="#home" class="logo"><img src="./img/logo.png" alt="Logo"></a>
+        <nav>
+            <ul class="navbar">
+                <li class="dropdown">
+                    <a href="#">Men's Collection</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Shirts</a></li>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Trousers</a></li>
+                        <li><a href="#">Denims</a></li>
+                        <li><a href="#">Office Wear</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Women's Collection</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Blouses</a></li>
+                        <li><a href="#">Trousers</a></li>
+                        <li><a href="#">Skirts</a></li>
+                        <li><a href="#">Denims</a></li>
+                        <li><a href="#">Office Wear</a></li>
+                        <li><a href="#">Frocks</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Sport Wear</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">T-shirts</a></li>
+                        <li><a href="#">Pants</a></li>
+                        <li><a href="#">Jogging Pants</a></li>
+                        <li><a href="#">Leggings</a></li>
+                        <li><a href="#">Shorts</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Gift Cards</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Header End -->
+
+
+
+
+
+
+    <div class="container">
+        <div class="contact-info">
+            <div class="info-box">
+                <h3>Address</h3>
+                <i class="ri-map-pin-2-fill">
+            <p>No.520, Malwatta Road, Kandana</p>
+        </i>
+                <i class="ri-map-pin-2-fill">
+            <p>675, Seeduwa Road, Ja-Ela</p>
+        </i>
+            </div>
+            <div class="info-box">
+                <h3>E-mail</h3>
+                <i class="ri-mail-fill">
+                <p>info@aurafashion.lk</p>      
+        </i>
+            </div>
+            <div class="info-box">
+                <h3>Phone</h3>
+                <i class="ri-phone-fill">
+            <p>+94 84 987 0978</p>
+        </i>
+            </div>
+            <div class="info-social-box">
+                <h3>Find Us On</h3>
+                <div class="social-icons">
+                    <i class="ri-facebook-circle-fill">
+                <a href="https://www.facebook.com/share/c4ndTk736EEFAbCj/?mibextid=qi2Omg"></a>
+                </i>
+                    <i class="ri-linkedin-box-fill">
+                <a href="https://www.linkedin.com/company/asianinternationalacademy/"></a>
+            </i>
+                    <i class="ri-tiktok-fill"></i>
+                    <a href="https://www.tiktok.com/@aia_holdings.lk?_t=8pxZa785Yhh&_r=1"></a>
+
+                    <i class="ri-instagram-fill">
+                    <a href="https://www.instagram.com/aia_holdings?igsh=cXBxbXlvanlnZTl3"></a>
+                </i>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Contact with us</h2>
+            <form action="#">
+                <div class="form-group">
+                    <input type="text" placeholder="Name*" required>
+                    <input type="email" placeholder="Email*" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Subject*" required>
+                    <input type="text" placeholder="Phone">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Message*" required></textarea>
+                </div>
+                <button type="submit">SEND MESSAGE</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Form -->
+
+
+
+
+
+    <!-- Footer start -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-columns">
+                <div class="column">
+                    <h3>MENU</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Women's</a></li>
+                        <li><a href="#">Men's</a></li>
+                        <li><a href="#">Sport Wear</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>SUPPORT</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Submit a request</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>MY ACCOUNT</h3>
+                    <ul>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Register</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                    <div class="column">
+                        <address>
+                        No.02 Welisara Road, Seeduwa<br>
+                        +94 76 466 2727<br>+94 75 036 0013<br>info@aurafashion.lk
+                    </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Copyright Start -->
+
+    <div class="copyright">
+        <p>&#169; All Rights Reserved. Aura Fashion (Pvt) Ltd.</p>
+    </div>
+
+    <!-- Copyright End -->
+
+    <!-- Footer End -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>

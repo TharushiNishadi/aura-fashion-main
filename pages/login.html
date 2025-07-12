@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Fashion | Enroll</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./img/favicon_io/favicon.png">
+    <!-- Favicon -->
+
+    <link rel="stylesheet" href="../css/loginstyles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .back-button {
+            position: absolute; /* Position it absolutely */
+            top: 20px; /* Distance from the top */
+            left: 20px; /* Distance from the left */
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333; /* Change text color as needed */
+            background: rgba(255, 255, 255, 0.8); /* Optional: background for better visibility */
+            padding: 10px; /* Add some padding */
+            border-radius: 5px; /* Optional: rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+            z-index: 1000; /* Ensure it's on top of other elements */
+        }
+
+        .back-button i {
+            margin-right: 8px; /* Space between the icon and text */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Back Button -->
+    <a href="/" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+    <!-- Mouse scroll -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <script>
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        const cursorDotLine = document.querySelector("[data-cursor-outline]");
+
+        window.addEventListener("mousemove", function(e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorDotLine.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, {
+                duration: 500,
+                fill: "forwards"
+            });
+        });
+    </script>
+
+    <div class="container">
+        <div class="form-wrapper">
+
+            <!-- Register Form -->
+            <div class="form-box register-box" id="register-form">
+                <h2>REGISTER</h2>
+                <form action="../actions/register.php" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="full_name" required>
+                        <label>Full Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="submit" value="Register">
+                    </div>
+                    <div class="register-extra">
+                        <p>Already have an account? <a href="#" class="switch-to-login">Login</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-box login-box" id="login-form">
+                <h2>LOGIN</h2>
+                <form action="../actions/login.php" method="POST">
+                    <div class="input-group">
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="extra">
+                        <a href="#">Forgot Password?</a>
+                        <p>Don't have an account? <a href="#" class="switch-to-register">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../js/ormain.js"></script>
+</body>
+
+</html>

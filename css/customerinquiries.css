@@ -1,0 +1,172 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+:root {
+    --main-color: #ff0000;
+    --text-color: #020307;
+    --bg-color: #ffffff;
+}
+
+/* Main Header */
+.main-header {
+    background-color: #373D4B; /* Use the first color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* Side Panel */
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #282C37; /* Use the second color */
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.side-panel ul {
+    list-style: none;
+}
+
+.side-panel ul li {
+    margin-bottom: 20px;
+}
+
+.side-panel ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    background-color: #373D4B; /* Use the first color */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.side-panel ul li a:hover {
+    background-color: #505A6B; /* Slightly lighter version for hover */
+}
+
+/* Content Area */
+.content-area {
+    margin-left: 270px; /* Leave space for the sidebar */
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    font-size: 1.2rem; /* Set a default font size */
+}
+
+.content-area h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #373D4B;
+    text-align: center;
+    border-bottom: 2px solid var(--main-color); /* Add border for header */
+    padding-bottom: 5px;
+}
+
+/* Inquiries Table */
+.inquiries-table {
+    width: 80%; /* Center the table */
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.inquiries-table th,
+.inquiries-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center; /* Center align text */
+    color: #333;
+}
+
+.inquiries-table th {
+    background-color: #373D4B; /* Header background color */
+    color: white; /* Header text color */
+    font-weight: bold;
+}
+
+.inquiries-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row color */
+}
+
+.inquiries-table tr:hover {
+    background-color: #f1f1f1; /* Row hover color */
+}
+
+/* Remove Button */
+.remove-btn {
+    padding: 8px 12px;
+    background-color: #D32F2F; /* Red button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #B71C1C; /* Darker red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .side-panel {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .content-area {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .inquiries-table {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .inquiries-table th, .inquiries-table td {
+        padding: 10px;
+        font-size: 14px; /* Adjusted font size */
+    }
+
+    .main-header h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inquiries-table th, .inquiries-table td {
+        font-size: 12px; /* Smaller font for mobile */
+        padding: 8px;
+    }
+}

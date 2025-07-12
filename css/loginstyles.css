@@ -1,0 +1,212 @@
+/* General Styles */
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: #ff0000;
+    --text-color: #020307;
+    --bg-color: #ffffff;
+    --tmp-color: rgb(26, 1, 250);
+    --tmp2-color: rgb(250, 221, 221);
+}
+
+body {
+    color: var(--bg-color);
+    background: url('./img/back-pic-register.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Mouse Cursor Styles */
+
+.cursor-dot {
+    width: 5px;
+    height: 5px;
+    background-color: rgb(202, 202, 202);
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(202, 202, 202);
+}
+
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* login styles */
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 500px;
+    height: 450px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+    align-items: center;
+}
+
+.form-box {
+    background-color: var(--text-color);
+    padding: 30px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+}
+
+.form-box h2 {
+    text-align: center;
+    color: var(--bg-color);
+}
+
+.login-box {
+    transform: rotateY(0deg);
+}
+
+.register-box {
+    transform: rotateY(180deg);
+}
+
+h2 {
+    color: #FF0000;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #000;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgb(161, 159, 159);
+    transition: 0.3s ease;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: -20px;
+    left: 10px;
+    color: var(--bg-color);
+    font-size: 15px;
+}
+
+.input-group input[type="submit"] {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.input-group input[type="submit"]:hover {
+    background-color: #d40000;
+}
+
+.register-extra {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #c0c0c0;
+    justify-content: center;
+}
+
+.register-extra a {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.register-extra a:hover {
+    text-decoration: underline;
+}
+
+.extra {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #c0c0c0;
+}
+
+.extra a {
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.extra a:hover {
+    text-decoration: underline;
+}
+
+
+/* Animation for switching between login and register */
+
+.switch-to-register,
+.switch-to-login {
+    cursor: pointer;
+    color: #FF0000;
+    text-decoration: none;
+}
+
+.switch-to-register:hover,
+.switch-to-login:hover {
+    text-decoration: underline;
+}
+
+.container .form-wrapper.rotate {
+    transform: rotateY(180deg);
+}
